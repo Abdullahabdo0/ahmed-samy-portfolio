@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+  --cyan: #00f0ff;
+  --purple: #7b2fff;
+  --pink: #ff2d78;
+  --dark: #04060e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #04060e;
+  color: #e0e8ff;
+  font-family: 'Cairo', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scan lines */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.025) 2px,
+    rgba(0, 0, 0, 0.025) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Custom cursor */
+.cursor {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00f0ff;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 20px #00f0ff;
+  transition: transform 0.1s;
+}
+
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid #00f0ff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* Glow utilities */
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+.glow-cyan-strong {
+  box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
+}
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #00f0ff 50%, #7b2fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00f0ff, #7b2fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.border-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#04060e, #04060e) padding-box,
+    linear-gradient(135deg, #00f0ff, #7b2fff, #ff2d78) border-box;
+}
+
+/* Card hover */
+.card-dark {
+  background: rgba(0, 240, 255, 0.03);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: all 0.35s ease;
+}
+.card-dark:hover {
+  background: rgba(0, 240, 255, 0.07);
+  border-color: rgba(0, 240, 255, 0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0,240,255,0.15);
+}
+
+/* Section spacing */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #04060e; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00f0ff, #7b2fff);
+  border-radius: 3px;
+}
