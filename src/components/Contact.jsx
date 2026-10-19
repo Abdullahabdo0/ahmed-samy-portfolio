@@ -87,7 +87,7 @@ export default function Contact() {
             <a
               href="https://wa.me/201069139510"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="card-dark flex items-center gap-4 rounded-2xl px-5 py-4 no-underline hover:-translate-x-1 transition-all duration-300 group"
             >
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center text-xl flex-shrink-0">
@@ -103,7 +103,7 @@ export default function Contact() {
             <a
               href="https://snapchat.com/t/hJthykiC"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="card-dark flex items-center gap-4 rounded-2xl px-5 py-4 no-underline hover:-translate-x-1 transition-all duration-300 group"
             >
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-xl flex-shrink-0">
