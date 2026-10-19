@@ -63,8 +63,7 @@ export default function Home() {
       </main>
       <footer className="py-8 px-8 border-t border-cyan-500/[0.07] flex items-center justify-between relative z-10">
         <span className="font-orbitron font-black text-sm text-gradient-cyan">A·S</span>
-        <span className="text-xs text-slate-600">© 2025 Ahmed Samy El-Sanhory</span>
-        <span className="text-xs text-slate-700">Made with ❤️</span>
+        <span className="text-xs text-slate-500">© 2025 Ahmed Samy El-Sanhory. All Rights Reserved.</span>
       </footer>
     </>
   );
