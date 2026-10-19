@@ -95,37 +95,80 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
           className="order-1 md:order-2 flex flex-col items-center justify-center w-full"
         >
-          {/* Main Photo Card */}
-          <div className="relative w-[260px] h-[370px] sm:w-[300px] sm:h-[420px] md:w-[320px] md:h-[460px] max-w-full">
-            {/* Ambient Background Glow */}
-            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-cyan-500 via-violet-600 to-pink-500 opacity-25 blur-xl scale-105 pointer-events-none" />
+          {/* Main Photo Card with Smooth Floating Animation */}
+          <motion.div
+            animate={{
+              y: [0, -14, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative w-[260px] h-[370px] sm:w-[300px] sm:h-[420px] md:w-[320px] md:h-[460px] max-w-full"
+          >
+            {/* Ambient Background Glow with Pulse Animation */}
+            <motion.div
+              animate={{
+                scale: [1.03, 1.12, 1.03],
+                opacity: [0.25, 0.45, 0.25],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-cyan-500 via-violet-600 to-pink-500 blur-xl pointer-events-none"
+            />
 
             {/* Neon Border */}
             <div className="absolute inset-[-2px] rounded-[34px] bg-gradient-to-br from-cyan-400 via-violet-600 to-pink-500 p-[2px] opacity-85">
               <div className="w-full h-full rounded-[32px] bg-[#04060e]" />
             </div>
 
-            {/* The Photo itself */}
-            <div className="relative z-10 w-full h-full rounded-[32px] overflow-hidden border border-cyan-500/20 bg-[#080d1a]">
+            {/* The Photo itself with smooth hover scale */}
+            <div className="relative z-10 w-full h-full rounded-[32px] overflow-hidden border border-cyan-500/20 bg-[#080d1a] group">
               <img
                 src="/photo-full.jpg"
                 alt="Ahmed Samy El-Sanhory"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#04060e]/70 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Floating Badge - University */}
-            <div className="absolute -left-4 sm:-left-8 top-6 z-20 bg-[#04060e]/95 border border-cyan-500/40 rounded-xl px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-bold text-cyan-300 backdrop-blur-md shadow-xl whitespace-nowrap">
+            <motion.div
+              animate={{
+                y: [0, -6, 0],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.4,
+              }}
+              className="absolute -left-4 sm:-left-8 top-6 z-20 bg-[#04060e]/95 border border-cyan-500/40 rounded-xl px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-bold text-cyan-300 backdrop-blur-md shadow-xl whitespace-nowrap"
+            >
               🏛 Galala Uni
-            </div>
+            </motion.div>
 
             {/* Floating Badge - Grade */}
-            <div className="absolute -right-3 sm:-right-6 bottom-8 z-20 bg-[#04060e]/95 border border-violet-500/40 rounded-xl px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-bold text-violet-300 backdrop-blur-md shadow-xl whitespace-nowrap">
+            <motion.div
+              animate={{
+                y: [0, -7, 0],
+              }}
+              transition={{
+                duration: 3.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.1,
+              }}
+              className="absolute -right-3 sm:-right-6 bottom-8 z-20 bg-[#04060e]/95 border border-violet-500/40 rounded-xl px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-bold text-violet-300 backdrop-blur-md shadow-xl whitespace-nowrap"
+            >
               ⭐ Grade: B+
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
       </div>
